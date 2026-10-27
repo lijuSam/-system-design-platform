@@ -1,0 +1,13 @@
+services:
+  systemcraft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: systemcraft-app:latest
+    container_name: systemcraft
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
